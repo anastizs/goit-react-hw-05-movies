@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   max-width: 1280px;
@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
   background-color: #1a1a1a;
 `;
 
@@ -29,7 +29,7 @@ export const NavigationLink = styled(NavLink)`
     color: #f60;
   }
   ::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 3px;

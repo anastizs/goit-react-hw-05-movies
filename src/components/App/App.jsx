@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import {Home} from "../../pages/Home";
-import {Movies} from "../../pages/Movies";
-import {MovieDetails} from "../../pages/MovieDetails";
+import { Home } from "../../pages/Home";
+import { Movies } from "../../pages/Movies";
+import { MovieDetails } from "../../pages/MovieDetails";
 
-import SharedLayout from 'components/SharedLayout/SharedLayout';
+import SharedLayout from "components/Header/Header";
 
 export const App = () => {
   return (

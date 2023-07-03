@@ -3,3 +3,5 @@ export const Movies = () => {
         <div></div>
     )
 }
+
+
