@@ -3,7 +3,7 @@ import { Home } from "../../pages/Home";
 import { Movies } from "../../pages/Movies";
 import { MovieDetails } from "../../pages/MovieDetails";
 
-import SharedLayout from "components/Header/Header";
+import {SharedLayout} from "../SharedLayout/SharedLayout";
 
 export const App = () => {
   return (

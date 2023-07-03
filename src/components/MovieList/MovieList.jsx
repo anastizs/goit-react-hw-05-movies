@@ -13,7 +13,7 @@ export const MovieList = ({ movies }) => {
           poster={movie.poster_path}
           release_date={movie.release_date}
           vote_average={movie.vote_average}
-        ></MovieListItem>
+          ></MovieListItem>
       ))}
     </List>
   );

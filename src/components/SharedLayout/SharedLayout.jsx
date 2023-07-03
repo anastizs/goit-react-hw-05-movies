@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
-import { Container, Header, Navigation, NavigationLink } from "./Header.styled";
+import { Container, Header, Navigation, NavigationLink } from "./SharedLayout.styled";
 import { Fallback } from "components/Fallback/Fallback.styled";
 
-export default function SharedLayout() {
+export const SharedLayout = () => {
   return (
     <>
       <Header>
@@ -22,4 +22,5 @@ export default function SharedLayout() {
       </Container>
     </>
   );
-}
+};
+
