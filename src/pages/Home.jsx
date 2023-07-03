@@ -2,8 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 
 import API from "../services/API";
 import { MovieList } from "../components/MovieList/MovieList";
-import PageTitle from "components/PageTitle/PageTitle";
-import Loader from "components/Loader/Loader";
+import { PageTitle } from "components/PageTitle/PageTitle";
+import { Loader } from "components/Loader/Loader";
 
 export const Home = () => {
   const [movies, setMovies] = useState(null);

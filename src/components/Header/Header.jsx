@@ -10,13 +10,13 @@ export default function SharedLayout() {
       <Header>
         <Container>
           <Navigation>
-            <NavigationLink to={"/"}>Home </NavigationLink>
-            <NavigationLink to={"movies"}>Movies </NavigationLink>
+            <NavigationLink to={"/"}>Популярні </NavigationLink>
+            <NavigationLink to={"movies"}>Фільми </NavigationLink>
           </Navigation>
         </Container>
       </Header>
       <Container>
-        <Suspense fallback={<Fallback>Loading page...</Fallback>}>
+        <Suspense fallback={<Fallback>Завантаження сторінки...</Fallback>}>
           <Outlet />
         </Suspense>
       </Container>
