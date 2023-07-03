@@ -30,6 +30,7 @@ const details = async (id) => {
         .get('/movie/' + id, {
             params: {
                 api_key: API_KEY,
+                language: 'uk',
             },
         });
     return response.data;

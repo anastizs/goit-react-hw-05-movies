@@ -23,7 +23,7 @@ export const Title = styled.h2`
   font-size: 36px;
 `;
 export const SubTitle = styled.h3`
-  font-size: 24px;
+  font-size: 16px;
 `;
 export const Text = styled.p`
   margin: 0;
@@ -40,6 +40,9 @@ export const Button = styled(Link)`
   padding: 2px 8px;
 
   :hover {
-    color: #6317a1;
+    color: #f60;
   }
+
+  &.active:after {
+    background-color: #f60;
 `;

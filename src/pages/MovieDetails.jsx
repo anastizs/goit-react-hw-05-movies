@@ -18,56 +18,47 @@ export const MovieDetails=() =>{
     const location = useLocation();
     const backLinkHref = location.state?.from ?? '/';
     const [movie, setMovie] = useState(null);
-    const [error, setError] = useState(null);
-    const [genres, setGenres] = useState([]);
+
+    const hadleFetchDetails = useCallback(async () => {
+        const response = await API.details(movieId);
+
+        setMovie(response);
+    }, [movieId, setMovie]);
 
     useEffect(() => {
-        const fetchMovie = async () => {
-            try {
-                const response = await API.details(movieId);
-                setMovie(response);
-                setGenres(response.genres.map(genre => genre.name));
-            } catch (error) {
-                setError('Ошибка при получении информации о фильме');
-            }
-        };
-        fetchMovie();
-    }, [movieId]);
-
-    if (error) {
-        return <div>{error}</div>;
-    }
+        hadleFetchDetails();
+    }, [hadleFetchDetails]);
     return (
         <>
             <Button to={backLinkHref}>
                 <MdKeyboardBackspace size="20px" />
-                Go back
+                Назад
             </Button>
-            {!movie && <Title>Loading</Title>}
+            {!movie && <Title>Завантаження</Title>}
             {movie && (
                 <>
                     <MainWrapper>
                         <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.title} />
                         <div>
-                            <Title>{`${movie.title} (${movie.year})`}</Title>
-                            <Text>{`User Score: ${movie.userScore}`}</Text>
-                            <SubTitle>Overview</SubTitle>
+                            <Title>{`${movie.title} (${movie.release_date?.slice(0, 4)})`}</Title>
+                            <Text>{`Рейтинг користувачів: ${movie.vote_average !== 0.0 ? `${Math.floor(movie.vote_average * 10)}%` : 'no ratings yet' }`}</Text>
+                            <SubTitle>ОПИС</SubTitle>
                             <Text>{movie.overview}</Text>
-                            <SubTitle>Genres</SubTitle>
-                            {/* <Text>{movie.genres}</Text> */}
+                            <SubTitle>ЖАНРИ</SubTitle>
+                            <Text>{movie.genres.map(genre => genre.name).join(', ')}</Text>
                         </div>
                     </MainWrapper>
                     <ButtonWrapper>
                         <Button to="cast" state={{ from: backLinkHref }}>
-                            Cast
+                            АКТОРИ
                         </Button>
                         <Button to="reviews" state={{ from: backLinkHref }}>
-                            Reviews
+                            ВІДГУКИ
                         </Button>
                     </ButtonWrapper>
                 </>
             )}
-            <Suspense fallback={<Fallback>Please wait</Fallback>}>
+            <Suspense fallback={<Fallback>Будь ласка, зачекайте</Fallback>}>
                 <Outlet />
             </Suspense>
         </>
