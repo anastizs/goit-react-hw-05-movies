@@ -5,7 +5,7 @@ import { MovieDetails } from "../../pages/MovieDetails";
 import { Cast } from "../Cast/Cast";
 import { Reviews } from "../Reviews/Reviews";
 
-import {SharedLayout} from "../SharedLayout/SharedLayout";
+import { SharedLayout } from "../SharedLayout/SharedLayout";
 
 export const App = () => {
   return (
