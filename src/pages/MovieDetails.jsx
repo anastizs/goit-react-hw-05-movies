@@ -47,7 +47,7 @@ export const MovieDetails = () => {
                 0,
                 4
               )})`}</Title>
-              <SubTitle>{`"${movie.tagline}"`}</SubTitle>
+              <SubTitle>{movie.tagline}</SubTitle>
               <Text>{`Рейтинг користувачів: ${
                 movie.vote_average !== 0.0
                   ? `${Math.floor(movie.vote_average * 10)}%`
