@@ -16,6 +16,7 @@ export const Cast = () => {
     const response = await API.cast(movieId);
     setCast(response);
   }, [movieId]);
+  const imgBaseUrl = "https://image.tmdb.org/t/p/w45/";
 
   useEffect(() => {
     hadleFetchCast();
@@ -32,10 +33,7 @@ export const Cast = () => {
         cast.slice(0, 10).map((cast) => (
           <Item key={cast.id}>
             {cast.profile_path ? (
-              <img
-                src={`https://image.tmdb.org/t/p/w45/${cast.profile_path}`}
-                alt={cast.name}
-              />
+              <img src={`${imgBaseUrl}$${cast.profile_path}`} alt={cast.name} />
             ) : (
               <img src={`${castplaceholder}`} alt={cast.name} />
             )}

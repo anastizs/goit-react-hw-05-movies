@@ -26,6 +26,8 @@ export const MovieDetails = () => {
     setMovie(response);
   }, [movieId, setMovie]);
 
+  const imgBaseUrl = "https://image.tmdb.org/t/p/w300/";
+
   useEffect(() => {
     hadleFetchDetails();
   }, [hadleFetchDetails]);
@@ -41,7 +43,7 @@ export const MovieDetails = () => {
           <MainWrapper>
             {movie.poster_path ? (
               <img
-                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                src={`${imgBaseUrl}${movie.poster_path}`}
                 alt={movie.title}
               />
             ) : (
