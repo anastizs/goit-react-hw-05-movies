@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
+import previewPlaceholder from "../../images/preview-placeholder.png";
 
 import {
   Item,
@@ -24,7 +25,12 @@ export const MovieListItem = ({
   return (
     <Item>
       <MovieLink to={`/movies/${id}`} state={{ from: location }}>
-        <img src={`${imgBaseUrl}${poster}`} alt={title} />
+        {poster ? (
+          <img src={`${imgBaseUrl}${poster}`} alt={title} />
+        ) : (
+          <img src={`${previewPlaceholder}`} alt={title} />
+        )}
+
         <InfoMain>
           <Title>{title}</Title>
           <Info>

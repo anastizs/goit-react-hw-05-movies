@@ -12,6 +12,7 @@ import {
   Button,
 } from "./MovieDetails.styled";
 import { Fallback } from "components/Fallback/Fallback.styled";
+import detailsplaceholder from "../images/details-placeholder.jpg";
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -38,10 +39,15 @@ export const MovieDetails = () => {
       {movie && (
         <>
           <MainWrapper>
-            <img
-              src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-              alt={movie.title}
-            />
+            {movie.poster_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            ) : (
+              <img src={`${detailsplaceholder}`} alt={movie.title} />
+            )}
+
             <div>
               <Title>{`${movie.title} (${movie.release_date?.slice(
                 0,

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import API from "../../services/API";
 import { Item, List, Name, Character } from "./Cast.styled";
 import { Fallback } from "../Fallback/Fallback.styled";
+import castplaceholder from "../../images/cast-placeholder.jpg";
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -30,10 +31,15 @@ export const Cast = () => {
         !isEmpty &&
         cast.slice(0, 10).map((cast) => (
           <Item key={cast.id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w45/${cast.profile_path}`}
-              alt={cast.name}
-            />
+            {cast.profile_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w45/${cast.profile_path}`}
+                alt={cast.name}
+              />
+            ) : (
+              <img src={`${castplaceholder}`} alt={cast.name} />
+            )}
+
             <div>
               <Name>{cast.name}</Name>
               <Character>{cast.character}</Character>
