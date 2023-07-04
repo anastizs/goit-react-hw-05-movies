@@ -47,3 +47,4 @@ export const Cast = () => {
     </List>
   );
 };
+export default Cast;

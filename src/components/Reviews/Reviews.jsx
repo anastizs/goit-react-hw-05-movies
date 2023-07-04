@@ -39,3 +39,4 @@ export const Reviews = () => {
     </List>
   );
 };
+export default Reviews;
