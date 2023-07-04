@@ -33,7 +33,7 @@ export const Cast = () => {
         cast.slice(0, 10).map((cast) => (
           <Item key={cast.id}>
             {cast.profile_path ? (
-              <img src={`${imgBaseUrl}$${cast.profile_path}`} alt={cast.name} />
+              <img src={`${imgBaseUrl}${cast.profile_path}`} alt={cast.name} />
             ) : (
               <img src={`${castplaceholder}`} alt={cast.name} />
             )}
